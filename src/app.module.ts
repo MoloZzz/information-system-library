@@ -9,6 +9,7 @@ import { entities } from './common/entities';
 import { migrations } from './common/migrations';
 import { LoggerModule } from './libs/logger/logger.module';
 import { LoggerMiddleware } from './libs/logger/logger.middleware';
+import { GenreModule } from './genre/genre.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { LoggerMiddleware } from './libs/logger/logger.middleware';
     PostgresqlModule.register(entities, migrations, []),
     DictionariesModule,
     LoggerModule,
+    GenreModule,
   ],
   controllers: [AppController],
   providers: [],

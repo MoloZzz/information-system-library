@@ -1,9 +1,9 @@
-import { HttpAdapterHost, NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { ConfigService } from '@nestjs/config';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { LoggerService } from './libs/logger/logger.service';
-import { GlobalExceptionFilter } from './libs/logger/global-exception.filter';
+import { ConfigService } from "@nestjs/config";
+import { NestFactory, HttpAdapterHost } from "@nestjs/core";
+import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { AppModule } from "./app.module";
+import { GlobalExceptionFilter } from "./libs/logger/global-exception.filter";
+import { LoggerService } from "./libs/logger/logger.service";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -24,8 +24,8 @@ async function bootstrap() {
       )
       .setVersion('1.0')
       .build();
-    const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('api/library/api-docs', app, document);
+    //const document = SwaggerModule.createDocument(app, config);
+    //SwaggerModule.setup('api/library/api-docs', app, document);
   }
   app.enableCors();
   await app.listen(configService.get<number>('PORT'));
