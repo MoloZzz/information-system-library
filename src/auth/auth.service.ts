@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { EntityWithCredsDto } from 'src/common/dto';
+import { CreateUserDto, EntityWithCredsDto } from 'src/common/dto';
 
 @Injectable()
 export class AuthService {
@@ -54,7 +54,9 @@ export class AuthService {
     }
   }
 
-  async register() {
-    throw new Error('Method not implemented.');
+  async register(registerEmployee: any) {
+    //const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+    //const user = this.userRepository.create({ ...createUserDto, password: hashedPassword });
+    //return this.userRepository.save(user);
   }
 }

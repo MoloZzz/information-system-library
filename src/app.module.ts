@@ -10,6 +10,10 @@ import { migrations } from './common/migrations';
 import { LoggerModule } from './libs/logger/logger.module';
 import { LoggerMiddleware } from './libs/logger/logger.middleware';
 import { GenreModule } from './genre/genre.module';
+import { TransactionsModule } from './transactions/transactions.module';
+import { EmployeesModule } from './employees/employees.module';
+import { UsersModule } from './users/users.module';
+import { BooksModule } from './books/books.module';
 
 @Module({
   imports: [
@@ -34,6 +38,10 @@ import { GenreModule } from './genre/genre.module';
     DictionariesModule,
     LoggerModule,
     GenreModule,
+    TransactionsModule,
+    EmployeesModule,
+    UsersModule,
+    BooksModule,
   ],
   controllers: [AppController],
   providers: [],

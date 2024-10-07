@@ -1,4 +1,11 @@
-import { Controller, Get, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  UseGuards,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { ApiCookieAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JwtGuard } from 'src/common/guards/jwt.guard';
 import { DictionariesService } from './dictionaries.service';
@@ -7,6 +14,7 @@ import { NameParamDto } from 'src/common/dto';
 @ApiTags('System dictionaries API')
 @Controller('dictionaries')
 @UseGuards(JwtGuard)
+@UsePipes(new ValidationPipe({ transform: true, forbidNonWhitelisted: true }))
 export class DictionariesController {
   constructor(private service: DictionariesService) {}
 

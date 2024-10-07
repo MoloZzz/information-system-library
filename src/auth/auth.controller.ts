@@ -23,7 +23,7 @@ export class AuthController {
       /* Написати дто для реєстрації після створення юзер сервісу */
     },
   ) {
-    return this.service.register();
+    return this.service.register({});
   }
 
   @Post('/login')

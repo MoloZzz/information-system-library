@@ -24,8 +24,8 @@ async function bootstrap() {
       )
       .setVersion('1.0')
       .build();
-    //const document = SwaggerModule.createDocument(app, config);
-    //SwaggerModule.setup('api/library/api-docs', app, document);
+    const document = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('api/library/api-docs', app, document);
   }
   app.enableCors();
   await app.listen(configService.get<number>('PORT'));
