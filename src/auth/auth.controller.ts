@@ -17,7 +17,12 @@ export class AuthController {
 
   @Post('/registration')
   @ApiOperation({ summary: 'Registration' })
-  async registration(@Body() body: { /* Написати дто для реєстрації після створення юзер сервісу */ }) {
+  async registration(
+    @Body()
+    body: {
+      /* Написати дто для реєстрації після створення юзер сервісу */
+    },
+  ) {
     return this.service.register();
   }
 

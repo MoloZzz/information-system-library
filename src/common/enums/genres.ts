@@ -1,3 +1,1 @@
-export enum genres{
-    
-}
+export enum genres {}

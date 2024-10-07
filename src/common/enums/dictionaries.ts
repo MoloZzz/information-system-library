@@ -1,3 +1,3 @@
 export enum Dictionaries {
-    genre = 'dict_genres'
+  genre = 'dict_genres',
 }

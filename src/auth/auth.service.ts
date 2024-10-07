@@ -26,7 +26,9 @@ export class AuthService {
 
     return {
       accessToken: this.generateToken(creds),
-      user: { /* тут буде юзер під яким логінимось*/ },
+      user: {
+        /* тут буде юзер під яким логінимось*/
+      },
     };
   }
 
@@ -46,7 +48,7 @@ export class AuthService {
       if (!user) {
         throw new UnauthorizedException('User not found');
       }
-      return user; 
+      return user;
     } catch (error) {
       throw new UnauthorizedException('Token validation failed');
     }

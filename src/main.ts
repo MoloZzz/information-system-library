@@ -1,9 +1,9 @@
-import { ConfigService } from "@nestjs/config";
-import { NestFactory, HttpAdapterHost } from "@nestjs/core";
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import { AppModule } from "./app.module";
-import { GlobalExceptionFilter } from "./libs/logger/global-exception.filter";
-import { LoggerService } from "./libs/logger/logger.service";
+import { ConfigService } from '@nestjs/config';
+import { NestFactory, HttpAdapterHost } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { AppModule } from './app.module';
+import { GlobalExceptionFilter } from './libs/logger/global-exception.filter';
+import { LoggerService } from './libs/logger/logger.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

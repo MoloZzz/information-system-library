@@ -4,9 +4,7 @@ import { DictionariesService } from './dictionaries.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([]),
-  ],
+  imports: [TypeOrmModule.forFeature([])],
   controllers: [DictionariesController],
   providers: [
     DictionariesService,
@@ -16,8 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         // pass everything from inject array
         return values;
       },
-      inject: [
-      ],
+      inject: [],
     },
   ],
 })

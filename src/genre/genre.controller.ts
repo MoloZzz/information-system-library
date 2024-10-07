@@ -6,5 +6,5 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Genre CRUD API')
 @UsePipes(new ValidationPipe({ transform: true, forbidNonWhitelisted: true }))
 export class GenreController {
-    constructor(private readonly service: GenreService){}
+  constructor(private readonly service: GenreService) {}
 }
