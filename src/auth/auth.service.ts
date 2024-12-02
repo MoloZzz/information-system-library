@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { CreateEmployeeDto, CreateUserDto, EntityWithCredsDto } from 'src/common/dto';
+import { CreateEmployeeDto } from 'src/common/dto';
 import { EmployeeEntity } from 'src/common/entities/employee.entity';
 import { EmployeesService } from 'src/employees/employees.service';
 
@@ -68,4 +68,3 @@ export class AuthService {
     }
   }
 }
-
