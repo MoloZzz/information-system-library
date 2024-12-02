@@ -11,24 +11,24 @@ export class UsersService {
     private readonly userRepository: Repository<UserEntity>,
   ) {}
 
-  create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto) {
     const user = this.userRepository.create(createUserDto);
     return this.userRepository.save(user);
   }
 
-  findAll() {
+  async findAll() {
     return this.userRepository.find();
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
     return this.userRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
+  async update(id: number, updateUserDto: UpdateUserDto) {
     return this.userRepository.update(id, updateUserDto);
   }
 
-  remove(id: number) {
+  async remove(id: number) {
     return this.userRepository.delete(id);
   }
 }

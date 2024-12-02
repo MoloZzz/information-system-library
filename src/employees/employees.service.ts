@@ -11,24 +11,28 @@ export class EmployeesService {
     private readonly employeeRepository: Repository<EmployeeEntity>,
   ) {}
 
-  create(createEmployeeDto: CreateEmployeeDto) {
+  async create(createEmployeeDto: CreateEmployeeDto) {
     const employee = this.employeeRepository.create(createEmployeeDto);
     return this.employeeRepository.save(employee);
   }
 
-  findAll() {
+  async findAll() {
     return this.employeeRepository.find();
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
     return this.employeeRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateEmployeeDto: UpdateEmployeeDto) {
+  async findByEmail(email: string) {
+    return this.employeeRepository.findOne({ where: { email } });
+  }  
+
+  async update(id: number, updateEmployeeDto: UpdateEmployeeDto) {
     return this.employeeRepository.update(id, updateEmployeeDto);
   }
 
-  remove(id: number) {
+  async remove(id: number) {
     return this.employeeRepository.delete(id);
   }
 }
