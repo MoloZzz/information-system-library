@@ -14,6 +14,7 @@ import { TransactionsModule } from './transactions/transactions.module';
 import { EmployeesModule } from './employees/employees.module';
 import { UsersModule } from './users/users.module';
 import { BooksModule } from './books/books.module';
+import { StatisticsModule } from './statistics/statistics.module';
 
 @Module({
   imports: [
@@ -42,6 +43,7 @@ import { BooksModule } from './books/books.module';
     EmployeesModule,
     UsersModule,
     BooksModule,
+    StatisticsModule,
   ],
   controllers: [AppController],
   providers: [],

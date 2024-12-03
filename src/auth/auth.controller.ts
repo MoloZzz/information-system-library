@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
-import { LoginDto, TokenDto } from 'src/common/dto';
+import { CreateEmployeeDto, LoginDto, TokenDto } from 'src/common/dto';
 
 @Controller('auth')
 @ApiTags('Authorization  API')
@@ -17,13 +17,8 @@ export class AuthController {
 
   @Post('/registration')
   @ApiOperation({ summary: 'Registration' })
-  async registration(
-    @Body()
-    body: {
-      /* Написати дто для реєстрації після створення юзер сервісу */
-    },
-  ) {
-    return this.service.register({});
+  async registration(@Body() body: CreateEmployeeDto) {
+    return this.service.register(body);
   }
 
   @Post('/login')
